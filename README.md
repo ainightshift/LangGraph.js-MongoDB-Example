@@ -59,7 +59,15 @@ npm run seed
 npm run dev
 ```
 
-2. Use the following API endpoints:
+2. Launch the Next.js UI in a separate terminal:
+
+```bash
+cd ui
+npm run dev
+```
+
+Then open [http://localhost:3001](http://localhost:3001) in your browser to chat with the agent.
+3. Use the following API endpoints:
 
 - Start a new conversation:
   ```
@@ -75,6 +83,7 @@ npm run dev
 - `index.ts`: Entry point of the application, sets up the Express server and API routes
 - `agent.ts`: Defines the LangGraph agent, tools, and conversation flow
 - `seed-database.ts`: Script for generating and seeding synthetic employee data into MongoDB
+- `ui/`: Next.js interface for interacting with the chat API
 
 ## How it works
 
