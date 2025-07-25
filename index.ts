@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express, { Express, Request, Response } from "express";
 import { MongoClient } from "mongodb";
 import { callAgent } from './agent';
+import { seedDatabaseIfNeeded } from './seed-database';
 
 const app: Express = express();
 app.use(express.json());
@@ -14,6 +15,8 @@ async function startServer() {
     await client.connect();
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+
+    await seedDatabaseIfNeeded(client);
 
     // Set up basic Express route
     // curl -X GET http://localhost:3000/
