@@ -132,7 +132,11 @@ export async function callAgent(client: MongoClient, query: string, thread_id: s
   );
 
   // console.log(JSON.stringify(finalState.messages, null, 2));
-  console.log(finalState.messages[finalState.messages.length - 1].content);
+  const finalAnswer = finalState.messages[finalState.messages.length - 1].content;
+  console.log(finalAnswer);
 
-  return finalState.messages[finalState.messages.length - 1].content;
+  return {
+    finalAnswer,
+    trace: finalState.messages,
+  };
 }

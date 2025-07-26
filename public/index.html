@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangGraph Agent UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 2rem auto; }
+    #messages { height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 1rem; background: #fff; }
+    .msg { margin-bottom: 0.5rem; }
+    #trace { white-space: pre-wrap; background: #f5f5f5; padding: 1rem; margin-top: 1rem; border: 1px solid #ccc; height: 200px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h1>LangGraph Agent UI</h1>
+  <div id="messages"></div>
+  <div style="display:flex;margin-top:1rem;">
+    <input id="userInput" style="flex-grow:1;margin-right:0.5rem;" placeholder="Type your request" />
+    <button id="sendBtn">Send</button>
+  </div>
+  <h2>Trace</h2>
+  <div id="trace"></div>
+<script src="script.js"></script>
+</body>
+</html>
