@@ -31,6 +31,7 @@ cd LangGraph-MongoDB-Example
 
 ```bash
 npm install
+npm install --prefix ui
 ```
 
 3. Set up your environment variables:
