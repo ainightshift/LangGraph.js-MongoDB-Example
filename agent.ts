@@ -63,7 +63,31 @@ export async function callAgent(client: MongoClient, query: string, thread_id: s
     }
   );
 
-  const tools = [employeeLookupTool];
+  const singMeASongTool = tool(
+    async () => {
+      return `[Intro]
+Hey, hey
+Hey, hey
+Hey
+
+[Verse 1: Jinu]
+Don't want you, need you
+Yeah, I need you to fill me up
+마시고 마셔 봐도
+성에 차지 않아
+Got a feeling that, oh, yeah (Yeah)
+You could be everything that
+That I need (Need), taste so sweet (Sweet)
+Every sip makes me want more, yeah`;
+    },
+    {
+      name: "sing_me_a_song",
+      description: "Returns a short song.",
+      schema: z.object({}),
+    }
+  );
+
+  const tools = [employeeLookupTool, singMeASongTool];
   
   // We can extract the state typing via `GraphState.State`
   const toolNode = new ToolNode<typeof GraphState.State>(tools);
